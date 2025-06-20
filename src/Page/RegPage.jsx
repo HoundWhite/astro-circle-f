@@ -67,7 +67,7 @@ const RegPage = () => {
         setErrors({})
         
         try {
-            const response = await fetch(`${API_URL}/register/`, {
+            const response = await fetch(`https://astro-circle-b.onrender.com/register/`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'
