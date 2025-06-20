@@ -11,7 +11,7 @@ const AccountPage = () => {
     const [error, setError] = useState(null);
     const { cart, removeFromCart, updateQuantity, getTotalPrice } = useCart();
 
-    // Загрузка данных пользователя )
+    // Загрузка данных пользователя
     useEffect(() => {
         const fetchUserData = async () => {
             try {
