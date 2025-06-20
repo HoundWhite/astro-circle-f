@@ -15,7 +15,7 @@ const LoginPage = () => {
         setError({})
 
         try {
-            const response = await fetch(`https://astro-circle-b.onrender.com/login/`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/login/`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
