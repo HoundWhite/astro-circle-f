@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import ProductImage from '../Components/ProductImage';
 import { getProducts } from '../services/productService';
 
 const ProductsPage = () => {
@@ -72,8 +71,9 @@ const ProductsPage = () => {
                                 className='flex flex-col overflow-hidden bg-celestial-500 rounded-3xl cursor-pointer hover:bg-celestial-600 transition-colors'
                             >
                                 <div className='flex items-center justify-center h-48 overflow-hidden'>
-                                    <ProductImage 
-                                        product={product}
+                                    <img 
+                                        src={product.image} 
+                                        alt={product.name}
                                         className='w-full h-full object-cover'
                                     />
                                 </div>

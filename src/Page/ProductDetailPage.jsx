@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-import ProductImage from '../Components/ProductImage';
 import { getProduct } from '../services/productService';
 import { useCart } from '../context/CartContext';
 
@@ -79,8 +78,9 @@ const ProductDetailPage = () => {
                     {/* Детальное описание товара */}
                     <div className='flex lg:flex-row flex-col gap-y-5'>
                         <div className='flex items-center justify-center 2xl:w-1/3 lg:w-1/2'>
-                            <ProductImage 
-                                product={product}
+                            <img 
+                                src={product.image} 
+                                alt={product.name}
                                 className='w-full max-w-md rounded-3xl'
                             />
                         </div>
