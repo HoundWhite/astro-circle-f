@@ -80,8 +80,18 @@ const RegPage = () => {
                 }),
             })
             
+            const contentType = response.headers.get('content-type');
+if (!contentType || !contentType.includes('application/json')) {
+    const text = await response.text();
+    throw new Error(`Expected JSON, got: ${text}`);
+}
+
             const data = await response.json()
             
+    if (response.status === 500) {
+    throw new Error("Server error: check Django logs");
+}
+
             if (!response.ok) {
                 // Обработка ошибок с бэкенда
                 if (typeof data === 'object') {
