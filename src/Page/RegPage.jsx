@@ -67,7 +67,7 @@ const RegPage = () => {
         setErrors({})
         
         try {
-            const response = await fetch(`${process.env.REACT_APP_API_URL || 'http://localhost:8000'}/register/`, {
+            const response = await fetch(`${process.env.REACT_APP_API_URL || 'https://astro-circle-b.onrender.com'}/register/`, {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json'

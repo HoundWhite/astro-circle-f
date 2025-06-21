@@ -1,5 +1,43 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+
+const PasswordInput = ({
+    id,
+    name,
+    value,
+    onChange,
+    placeholder,
+    showPassword,
+    setShowPassword,
+    autoComplete = 'current-password',
+  }) => (
+    <div>
+      <div className="relative flex items-center">
+        <input
+          id={id}
+          name={name}
+          type={showPassword ? 'text' : 'password'}
+          autoComplete={autoComplete}
+          required
+          className="w-full rounded-xl py-1 px-3 bg-celestial-700 text-celestial-200 2xl:text-lg md:text-base text-lg italic focus:outline-none pr-10"
+          placeholder={placeholder}
+          value={value}
+          onChange={onChange}
+        />
+        <button
+          type="button"
+          tabIndex={-1}
+          className="absolute right-3 text-celestial-200 hover:text-celestial-100 focus:outline-none"
+          style={{ background: 'none', border: 'none' }}
+          onClick={() => setShowPassword((v) => !v)}
+          aria-label={showPassword ? 'Скрыть пароль' : 'Показать пароль'}
+        >
+          {showPassword ? <FaEyeSlash size={20} /> : <FaEye size={20} />}
+        </button>
+      </div>
+    </div>
+  );
 
 const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:8000';
 
@@ -7,6 +45,7 @@ const LoginPage = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState({})
+    const [showPassword, setShowPassword] = useState(false)
     const navigate = useNavigate()
 
     // Обработка отправки формы
@@ -68,6 +107,7 @@ const LoginPage = () => {
 
                 <div className='space-y-3 w-full text-lg'>
                     <div>
+                    <label htmlFor="email" className='text-celestial-200 2xl:text-lg md:text-base text-lg italic'>эл. почта</label>
                         <input
                             type="email"
                             id="email"
@@ -83,16 +123,18 @@ const LoginPage = () => {
                     </div>
 
                     <div>
-                        <input
-                            type="password"
+                        <label htmlFor="password" className='text-celestial-200 2xl:text-lg md:text-base text-lg italic'>Пароль</label>
+                        <PasswordInput
                             id="password"
+                            name="password"
                             value={password}
                             onChange={(e) => {
                                 setPassword(e.target.value)
                                 setError({ ...error, password: null })
                             }}
-                            required
-                            className='w-full rounded-xl py-1 px-3 bg-celestial-700 text-celestial-200 2xl:text-lg md:text-base text-lg italic focus:outline-none'
+                            placeholder="не менее 8 символов"
+                            showPassword={showPassword}
+                            setShowPassword={setShowPassword}
                         />
                         {error.password && <div className="error-message">{error.password}</div>}
                     </div>
