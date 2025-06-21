@@ -19,7 +19,6 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "postbuild": "echo '/* /index.html 200' > build/_redirects && echo '/* /index.html' > build/404.html",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
