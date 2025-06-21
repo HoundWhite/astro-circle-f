@@ -4,6 +4,21 @@ import Header from '../Components/Header';
 import Footer from '../Components/Footer';
 import { getProducts } from '../services/productService';
 
+// Функция для получения имени изображения по ID продукта
+const getProductImageName = (productId) => {
+    const imageMapping = {
+        1: 'amulet.png',
+        2: 'astro_book.png',
+        3: 'astro_calendar.png',
+        4: 'candles.png',
+        5: 'crystal.png',
+        6: 'num_book.png',
+        7: 'num_calendar.png',
+        8: 'tarot_cards.png',
+    };
+    return imageMapping[productId] || 'default.png';
+};
+
 const ProductsPage = () => {
     const navigate = useNavigate();
     const [products, setProducts] = useState([]);
@@ -72,9 +87,12 @@ const ProductsPage = () => {
                             >
                                 <div className='flex items-center justify-center h-48 overflow-hidden'>
                                     <img 
-                                        src={product.image} 
+                                        src={product.image_url || `/media/products/${getProductImageName(product.id)}`} 
                                         alt={product.name}
                                         className='w-full h-full object-cover'
+                                        onError={(e) => {
+                                            e.target.src = `/media/products/${getProductImageName(product.id)}`;
+                                        }}
                                     />
                                 </div>
                                 <div className='p-6 text-celestial-100'>
