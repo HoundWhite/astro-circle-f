@@ -98,7 +98,7 @@ const AccountPage = () => {
 
                     <div className='flex flex-col lg:flex-row gap-8'>
                         {/* Информация о пользователе */}
-                        <div className='bg-celestial-500 p-8 rounded-3xl w-1/3'>
+                        <div className='bg-celestial-500 p-8 rounded-3xl lg:w-1/3 w-full'>
                             <h2 className='text-2xl font-semibold text-celestial-100 mb-6'>
                                 Информация о пользователе
                             </h2>
@@ -124,7 +124,7 @@ const AccountPage = () => {
                         </div>
 
                         {/* Корзина */}
-                        <div className='bg-celestial-500 p-8 rounded-3xl w-2/3'>
+                        <div className='bg-celestial-500 p-8 rounded-3xl lg:w-2/3 w-full'>
                             <h2 className='text-2xl font-semibold text-celestial-100 mb-6'>
                                 Корзина
                             </h2>

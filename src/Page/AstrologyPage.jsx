@@ -8,7 +8,7 @@ const AstrologyPage = () => {
         <Header />
         {/* Страница астрологии */}
         <section className='my-10 max-w-[1920px] mx-auto'>
-            <div className='bg-celestial-500 px-11 py-8 flex flex-col gap-7'>
+            <div className='bg-celestial-500 lg:px-11 px-5 py-8 flex flex-col gap-7'>
                 {/* Заголовок */}
             <h3 className='2xl:text-6xl md:text-2xl text-5xl font-bold text-center text-celestial-100'>Астрология</h3>
 
@@ -25,7 +25,7 @@ const AstrologyPage = () => {
           {/* история */}
           <div >
             <img src='./media/astro_his.png' className='float-right 2xl:w-auto lg:w-[515px] lg:flex hidden m-5' alt='история_астрологии' loading='lazy' />
-            <div className='justify-center 2xl:text-lg md:text-sm text-sm text-celestial-100 text-justify'>
+            <div className='justify-center 2xl:text-lg indent-4 md:text-sm text-sm text-celestial-100 text-justify'>
               <h3 className='lg:text-2xl md:text-lg text-lg text-center font-bold md:text-left mb-4'>История использования астрологии</h3>
               <p>Астрология имеет древние корни и на протяжении тысячелетий играла важную роль в жизни человека. Её использование в прошлом выходило далеко за пределы личных гороскопов и было тесно связано с наукой, религией, политикой и медициной. В древнем Вавилоне, где астрология как система впервые оформилась, наблюдение за движением небесных тел имело в первую очередь прикладной характер: звёзды и планеты рассматривались как знамения, по которым можно было предсказывать судьбы правителей, исходы войн, природные катаклизмы и урожаи. Тогда гороскоп составлялся не для личности, а для страны, города или царя — именно он считался главным носителем судьбы народа.
               </p>

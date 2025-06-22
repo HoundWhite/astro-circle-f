@@ -147,10 +147,11 @@ if (!contentType || !contentType.includes('application/json')) {
                     )}
                     <div className='space-y-3 w-full text-lg'>
                         <div>
+                        <label htmlFor="email" className='text-celestial-200 2xl:text-lg md:text-base text-lg italic'>ФИО</label>
                             <input
                                 type='text'
                                 name='name'
-                                placeholder='ФИО'
+                                placeholder='Фамилия Имя Отчество'
                                 value={forma.name}
                                 onChange={handleInputChange}
                                 required
@@ -160,6 +161,7 @@ if (!contentType || !contentType.includes('application/json')) {
                             {errors.name && <div className="text-red-500 text-sm">{errors.name}</div>}
                         </div>
                         <div>
+                        <label htmlFor="email" className='text-celestial-200 2xl:text-lg md:text-base text-lg italic'>Телефон</label>
                             <input
                                 type='tel'
                                 name='telephon'
@@ -173,6 +175,7 @@ if (!contentType || !contentType.includes('application/json')) {
                             {errors.telephon && <div className="text-red-500 text-sm">{errors.telephon}</div>}
                         </div>
                         <div>
+                        <label htmlFor="email" className='text-celestial-200 2xl:text-lg md:text-base text-lg italic'>эл. почта</label>
                             <input
                                 type='email'
                                 name='email'
@@ -186,10 +189,11 @@ if (!contentType || !contentType.includes('application/json')) {
                             {errors.email && <div className="text-red-500 text-sm">{errors.email}</div>}
                         </div>
                         <div>
+                        <label htmlFor="email" className='text-celestial-200 2xl:text-lg md:text-base text-lg italic'>Пароль</label>
                             <input
                                 type='password'
                                 name='password'
-                                placeholder='пароль'
+                                placeholder='не менее 8 символов'
                                 value={forma.password}
                                 onChange={handleInputChange}
                                 required

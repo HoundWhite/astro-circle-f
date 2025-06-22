@@ -111,6 +111,7 @@ const LoginPage = () => {
                         <input
                             type="email"
                             id="email"
+                            name='email'
                             value={email}
                             onChange={(e) => {
                                 setEmail(e.target.value)
@@ -124,7 +125,8 @@ const LoginPage = () => {
 
                     <div>
                         <label htmlFor="password" className='text-celestial-200 2xl:text-lg md:text-base text-lg italic'>Пароль</label>
-                        <PasswordInput
+                        <input
+                        type='password'
                             id="password"
                             name="password"
                             value={password}
@@ -133,8 +135,6 @@ const LoginPage = () => {
                                 setError({ ...error, password: null })
                             }}
                             placeholder="не менее 8 символов"
-                            showPassword={showPassword}
-                            setShowPassword={setShowPassword}
                         />
                         {error.password && <div className="error-message">{error.password}</div>}
                     </div>

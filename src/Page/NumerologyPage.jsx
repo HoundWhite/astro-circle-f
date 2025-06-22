@@ -8,7 +8,7 @@ const NumerologyPage = () => {
         <Header />
         {/* Страница нумерологии */}
         <section className='my-10 max-w-[1920px] mx-auto'>
-            <div className='bg-celestial-500 px-11 py-8 flex flex-col gap-7'>
+            <div className='bg-celestial-500 lg:px-11 px-5 py-8 flex flex-col gap-7'>
                 {/* Заголовок */}
             <h3 className='2xl:text-6xl md:text-2xl text-5xl font-bold text-center text-celestial-100'>Нумерология</h3>
 
@@ -24,7 +24,7 @@ const NumerologyPage = () => {
           {/* история */}
           <div >
             <img src='./media/num_his.png' className='float-right 2xl:w-auto lg:w-[515px] lg:flex hidden m-5' alt='история_нумерологии' loading='lazy' />
-            <div className='justify-center 2xl:text-lg md:text-sm text-sm text-celestial-100 text-justify'>
+            <div className='justify-center 2xl:text-lg indent-4 md:text-sm text-sm text-celestial-100 text-justify'>
                 <h3 className='lg:text-2xl md:text-lg text-lg text-center font-bold md:text-left mb-4'>История использования нумерологии</h3>
                 <p>Нумерология с древности использовалась как мистический инструмент для понимания мира и человеческой судьбы. В таких культурах, как египетская и вавилонская, числам придавали священное значение, считая, что они несут в себе божественную суть. Жрецы использовали числа в религиозных обрядах, а также в гадательных практиках, пытаясь через них предсказывать будущее или понять волю богов. Вавилоняне, например, связывали числа с астрологическими знаниями, стремясь уловить закономерности между движением небесных тел и земными событиями.</p>
                 <p>В Древней Индии нумерология развивалась как часть ведической традиции, где каждому числу соответствовала определённая планета. Здесь числа использовались для выбора благоприятных дат, определения характера человека и выявления его кармических задач. Аналогично и в Китае, и в других восточных культурах числа рассматривались как носители энергетических вибраций, влияющих на жизнь человека.</p>
